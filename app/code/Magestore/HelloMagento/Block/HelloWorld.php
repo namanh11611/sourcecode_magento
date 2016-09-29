@@ -23,8 +23,8 @@ class HelloWorld extends \Magento\Framework\View\Element\Template
                 ),
                 array(
                     'attribute'=>'price',
-                    'from'=>500,
-                    'to'=>700,
+                    'from'=>200,
+                    'to'=>500,
                 ),
             ))
             ->load();

@@ -22,14 +22,18 @@
 
     <?php
     $collection = $block->getProductCollection();
-//    $collection->addAttributeToFilter('price', array('eq' => 0));
-//    $collection->addFieldToFilter(array(array('attribute'=>'price', 'neq'=>"0" )));
     foreach($collection as $product):?>
         <tr>
             <td> <?=$product->getId(); ?> </td>
             <td> <?=$product->getName(); ?> </td>
             <td> <?=$product->getSKU(); ?> </td>
-            <td> <?php echo "$" . number_format($product->getPrice(), 2, ".", ","); ?> </td>
+            <td>
+                <!-- Hàm format price về chuẩn -->
+                <?php
+                echo $this->helper('Magento\Framework\Pricing\Helper\Data')->currency($product->getPrice(),true,false);
+                ?>
+            </td>
+
             <td> <p><a href= <?php echo $product->getProductUrl(); ?> > View Detail </a></p> </td>
         </tr>
     <?php endforeach;?>
