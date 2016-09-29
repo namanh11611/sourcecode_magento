@@ -1,3 +1,44 @@
 <h1> This is templates for Block </h1>
-<!--?php
-echo $block->sayHello();-->
+<?php
+
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+$productCollection = $objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
+
+$collection = $productCollection->create()
+    ->addAttributeToSelect('*')
+    ->load();
+?>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>STT</th>
+        <th>Product Name</th>
+        <th>Product SKU</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+
+    <?php
+    $index = 0;
+    foreach($collection as $product):?>
+        <tr>
+            <td> <?php echo ++$index; ?> </td>
+            <td> <?=$product->getName(); ?> </td>
+            <td> <?=$product->getSKU(); ?> </td>
+            <td> <?=$product->getPrice(); ?> </td>
+            <td> <?=$product->getAction(); ?> </td>
+        </tr>
+    <?php endforeach;?>
+</table>
