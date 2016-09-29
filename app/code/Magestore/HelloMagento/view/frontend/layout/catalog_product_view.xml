@@ -2,10 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="head.components">
-            <block class="Magento\Catalog\Block\Product\View" name="demo.tab" template="Magestore_HelloMagento::helloworld.phtml" group="detailed_info" >
-                <arguments>
-                    <argument translate="true" name="title" xsi:type="string">Cutom Tab</argument>
-                </arguments>
+            <block class="Magento\Catalog\Block\HelloWorld" name="hellomagento" template="Magestore_HelloMagento::helloworld.phtml" group="detailed_info" >
             </block>
         </referenceBlock>
     </body>
