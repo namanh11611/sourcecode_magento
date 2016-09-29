@@ -1,36 +1,55 @@
 <?php
 namespace Magestore\HelloMagento\Block;
 
+/**
+ * Class HelloWorld
+ * @package Magestore\HelloMagento\Block
+ */
 class HelloWorld extends \Magento\Framework\View\Element\Template
 {
-    public function __construct(\Magento\Framework\View\Element\Template\Context $context)
-    {
-        return parent::__construct($context);
+    /**
+     * @var \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory
+     */
+    protected $collectionFactory;
+
+    /**
+     * HelloWorld constructor.
+     * @param \Magento\Framework\View\Element\Template\Context $context
+     * @param \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollection
+     */
+    public function __construct(
+        \Magento\Framework\View\Element\Template\Context $context,
+        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollection
+    ) {
+        parent::__construct($context);
+        $this->collectionFactory = $productCollection;
     }
 
+    /**
+     * @return $this
+     */
     public function getProductCollection()
     {
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $productCollection = $objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
-//        $collection = $productCollection->create()->addAttributeToSelect('*')->load();
-//        $collection = $productCollection->create()->addAttributeToSelect('name')->addAttributeToFilter('price', array('eq' => 0))->load();
-        $collection = $productCollection->create()->addAttributeToSelect('name')
+        $collection = $this->collectionFactory->create()->addAttributeToSelect('name')
             ->addAttributeToFilter(array(
                 array(
                   'attribute'=>'price',
                     'from'=>0,
-                    'to'=>100,
+                    'to'=>50,
                 ),
                 array(
                     'attribute'=>'price',
-                    'from'=>500,
-                    'to'=>700,
+                    'from'=>70,
+                    'to'=>100,
                 ),
             ))
             ->load();
         return $collection;
     }
 
+    /**
+     * @return \Magento\Framework\Phrase
+     */
     public function sayHello()
     {
         return __('Hello from Template!');
