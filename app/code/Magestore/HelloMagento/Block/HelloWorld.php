@@ -13,7 +13,21 @@ class HelloWorld extends \Magento\Framework\View\Element\Template
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $productCollection = $objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
 //        $collection = $productCollection->create()->addAttributeToSelect('*')->load();
-        $collection = $productCollection->create()->addAttributeToSelect('name')->addAttributeToFilter('price', array('eq' => 0))->load();
+//        $collection = $productCollection->create()->addAttributeToSelect('name')->addAttributeToFilter('price', array('eq' => 0))->load();
+        $collection = $productCollection->create()->addAttributeToSelect('name')
+            ->addAttributeToFilter(array(
+                array(
+                  'attribute'=>'price',
+                    'from'=>0,
+                    'to'=>100,
+                ),
+                array(
+                    'attribute'=>'price',
+                    'from'=>500,
+                    'to'=>700,
+                ),
+            ))
+            ->load();
         return $collection;
     }
 
