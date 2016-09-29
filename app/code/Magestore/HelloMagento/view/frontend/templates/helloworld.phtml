@@ -1,14 +1,4 @@
 <h1> This is templates for Block </h1>
-<?php
-
-$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-
-$productCollection = $objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
-
-$collection = $productCollection->create()
-    ->addAttributeToSelect('*')
-    ->load();
-?>
 
 <style>
     table, th, td {
@@ -31,14 +21,16 @@ $collection = $productCollection->create()
     </tr>
 
     <?php
-    $index = 0;
+    $collection = $block->getProductCollection();
+//    $collection->addAttributeToFilter('price', array('eq' => 0));
+//    $collection->addFieldToFilter(array(array('attribute'=>'price', 'neq'=>"0" )));
     foreach($collection as $product):?>
         <tr>
-            <td> <?php echo ++$index; ?> </td>
+            <td> <?=$product->getId(); ?> </td>
             <td> <?=$product->getName(); ?> </td>
             <td> <?=$product->getSKU(); ?> </td>
-            <td> <?=$product->getPrice(); ?> </td>
-            <td> <?=$product->getAction(); ?> </td>
+            <td> <?php echo "$" . number_format($product->getPrice(), 2, ".", ","); ?> </td>
+            <td> <p><a href= <?php echo $product->getProductUrl(); ?> > View Detail </a></p> </td>
         </tr>
     <?php endforeach;?>
 </table>

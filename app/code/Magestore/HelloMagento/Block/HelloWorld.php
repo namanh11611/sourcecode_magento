@@ -8,6 +8,15 @@ class HelloWorld extends \Magento\Framework\View\Element\Template
         return parent::__construct($context);
     }
 
+    public function getProductCollection()
+    {
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $productCollection = $objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
+//        $collection = $productCollection->create()->addAttributeToSelect('*')->load();
+        $collection = $productCollection->create()->addAttributeToSelect('name')->addAttributeToFilter('price', array('eq' => 0))->load();
+        return $collection;
+    }
+
     public function sayHello()
     {
         return __('Hello from Template!');
