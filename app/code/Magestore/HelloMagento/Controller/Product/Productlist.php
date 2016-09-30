@@ -1,7 +1,7 @@
 <?php
-namespace Magestore\HelloMagento\Controller\Index;
+namespace Magestore\HelloMagento\Controller\Product;
 
-class Index extends \Magento\Framework\App\Action\Action {
+class Productlist extends \Magento\Framework\App\Action\Action {
 
     protected $resultPageFactory;
 
