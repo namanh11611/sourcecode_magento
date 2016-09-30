@@ -35,23 +35,22 @@ class ProductList extends ListProduct {
      */
     protected function _getProductCollection()
     {
-//        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-//        $this->_productCollection = $objectManager->create('Magento\Catalog\Model\ResourceModel\Product\Collection')
+        parent::_getProductCollection();
         $this->_productCollection
             ->addAttributeToSelect('*')
             ->addAttributeToFilter(array(
-            array(
-                'attribute'=>'price',
-                'from'=>0,
-                'to'=>100,
-            ),
-            array(
-                'attribute'=>'price',
-                'from'=>200,
-                'to'=>500,
-            ),
-        ));
-        $this->_productCollection->load();
+                array(
+                    'attribute'=>'price',
+                    'from'=>0,
+                    'to'=>100,
+                ),
+                array(
+                    'attribute'=>'price',
+                    'from'=>200,
+                    'to'=>500,
+                ),
+            ))
+            ->load();
         return $this->_productCollection;
     }
 }
