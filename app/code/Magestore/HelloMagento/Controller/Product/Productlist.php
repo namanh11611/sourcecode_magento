@@ -16,6 +16,7 @@ class Productlist extends \Magento\Framework\App\Action\Action {
      */
     public function execute() {
         $resultPage = $this->resultPageFactory->create();
+//        $this->getLayout()->getBlock('head')->setTitle('Product List');
         return $resultPage;
     }
 }
