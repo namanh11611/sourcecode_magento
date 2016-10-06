@@ -22,19 +22,19 @@ class InstallSchema implements InstallSchemaInterface
         )->addColumn(
             'product_id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
-            255,
+            null,
             [],
             'Product ID'
         )->addColumn(
             'new_price',
-            \Magento\Framework\DB\Ddl\Table::TYPE_REAL,
-            255,
+            \Magento\Framework\DB\Ddl\Table::TYPE_FLOAT,
+            null,
             [],
             'New Price'
         )->addColumn(
             'status',
-            \Magento\Framework\DB\Ddl\Table::TYPE_BLOB,
-            255,
+            \Magento\Framework\DB\Ddl\Table::TYPE_BIT,
+            1,
             [],
             'Status'
         )->setComment(
