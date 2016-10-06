@@ -27,14 +27,14 @@ class InstallSchema implements InstallSchemaInterface
             'Product ID'
         )->addColumn(
             'new_price',
-            \Magento\Framework\DB\Ddl\Table::TYPE_FLOAT,
+            \Magento\Framework\DB\Ddl\Table::TYPE_DECIMAL,
             null,
             [],
             'New Price'
         )->addColumn(
             'status',
-            \Magento\Framework\DB\Ddl\Table::TYPE_BOOLEAN,
-            1,
+            \Magento\Framework\DB\Ddl\Table::TYPE_SMALLINT,
+            16,
             [],
             'Status'
         )->setComment(

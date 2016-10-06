@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Magestore\HelloMagento\Model\ResourceModel\Product\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">hellomagento_product</argument>
+            <argument name="resourceModel" xsi:type="string">Magestore\HelloMagento\Model\ResourceModel\Product</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="hellomagento_product_grid_data_source" xsi:type="string">Magestore\HelloMagento\Model\ResourceModel\Product\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>
