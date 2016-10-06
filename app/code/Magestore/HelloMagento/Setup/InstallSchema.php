@@ -33,7 +33,7 @@ class InstallSchema implements InstallSchemaInterface
             'New Price'
         )->addColumn(
             'status',
-            \Magento\Framework\DB\Ddl\Table::TYPE_BIT,
+            \Magento\Framework\DB\Ddl\Table::TYPE_BOOLEAN,
             1,
             [],
             'Status'
