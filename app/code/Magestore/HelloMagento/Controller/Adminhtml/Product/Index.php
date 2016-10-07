@@ -3,13 +3,12 @@ namespace Magestore\HelloMagento\Controller\Adminhtml\Product;
 
 class Index extends \Magento\Backend\App\Action
 {
-    protected $resultPageFactory = false;
-    public function __construct(
-        \Magento\Backend\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory
-    ) {
-        parent::__construct($context);
+    protected $resultPageFactory;
+
+    public function __construct(\Magento\Backend\App\Action\Context $context,
+                                \Magento\Framework\View\Result\PageFactory $resultPageFactory) {
         $this->resultPageFactory = $resultPageFactory;
+        return parent::__construct($context);
     }
 
     public function execute()
@@ -18,14 +17,14 @@ class Index extends \Magento\Backend\App\Action
         $resultPage = $this->resultPageFactory->create();
 
         //Set the menu which will be active for this page
-        $resultPage->setActiveMenu('Magestore_HelloMagento::blog_manage');
+//        $resultPage->setActiveMenu('Magestore_HelloMagento::blog_manage');
 
         //Set the header title of grid
-        $resultPage->getConfig()->getTitle()->prepend(__('Manage Blogs'));
+//        $resultPage->getConfig()->getTitle()->prepend(__('Manage Blogs'));
 
         //Add bread crumb
-        $resultPage->addBreadcrumb(__('Magestore'), __('Magestore'));
-        $resultPage->addBreadcrumb(__('HelloMagento'), __('Manage Blogs'));
+//        $resultPage->addBreadcrumb(__('Magestore'), __('Magestore'));
+//        $resultPage->addBreadcrumb(__('HelloMagento'), __('Manage Blogs'));
 
         return $resultPage;
     }
