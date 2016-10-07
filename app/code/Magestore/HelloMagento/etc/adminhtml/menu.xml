@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="Magestore_HelloMagento::hello" title="Custom Menu" module="Magestore_HelloMagento" sortOrder="50" resource="Magestore_HelloMagento::hello"/>
-        <add id="Magestore_HelloMagento::hello_manage_items" title="Manage Product" module="Magestore_HelloMagento" sortOrder="50" parent="Magestore_HelloMagento::hello" action="hellomagento/adminhtml/product/index" resource="Magestore_HelloMagento::hello_manage_items"/>
+        <add id="Magestore_HelloMagento::hello_manage_items" title="Manage Product" module="Magestore_HelloMagento" sortOrder="50" parent="Magestore_HelloMagento::hello" action="hellomagento/product" resource="Magestore_HelloMagento::hello_manage_items"/>
         <!--<add id="Magestore_HelloMagento::hello_configuration" title="Configuration" module="Magestore_HelloMagento" sortOrder="50" parent="Magestore_HelloMagento::hello" action="adminhtml/system_config/edit/section/hello" resource="Magestore_HelloMagento::hello_configuration"/>-->
     </menu>
 </config>

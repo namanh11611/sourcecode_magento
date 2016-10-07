@@ -6,8 +6,8 @@ class Grid extends \Magento\Backend\Block\Widget\Grid\Container
     {
         $this->_blockGroup = 'Magestore_HelloMagento';
         $this->_controller = 'adminhtml_product';
-        $this->_headerText = __('Manage Blogs');
-        $this->_addButtonLabel = __('Add New Blog');
+        $this->_headerText = __('Manage Product');
+        $this->_addButtonLabel = __('Add New Product');
 
         parent::_construct();
     }

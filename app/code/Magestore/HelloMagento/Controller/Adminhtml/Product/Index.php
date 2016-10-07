@@ -17,14 +17,14 @@ class Index extends \Magento\Backend\App\Action
         $resultPage = $this->resultPageFactory->create();
 
         //Set the menu which will be active for this page
-//        $resultPage->setActiveMenu('Magestore_HelloMagento::blog_manage');
+        $resultPage->setActiveMenu('Magestore_HelloMagento::manager_product');
 
         //Set the header title of grid
-//        $resultPage->getConfig()->getTitle()->prepend(__('Manage Blogs'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Manage Product'));
 
         //Add bread crumb
 //        $resultPage->addBreadcrumb(__('Magestore'), __('Magestore'));
-//        $resultPage->addBreadcrumb(__('HelloMagento'), __('Manage Blogs'));
+//        $resultPage->addBreadcrumb(__('HelloMagento'), __('Manage Product'));
 
         return $resultPage;
     }
