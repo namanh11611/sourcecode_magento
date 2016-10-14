@@ -19,6 +19,8 @@ class HelloWorld extends \Magento\Framework\View\Element\Template {
 //        $collectionFactory = $objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
 //        $collection = $collectionFactory->create()->addAttributeToSelect('*')->load();
 //        $collection = $collectionFactory->create()->addAttributeToSelect('name')->addAttributeToFilter('price', array('eq' => 0))->load();
+
+//        Lọc sản phẩm hiển thị ra bảng được tạo bằng HTML trong file helloworld.phtml
         $collection = $this->collectionFactory->create()->addAttributeToSelect('name')
             ->addAttributeToFilter(array(
                 array(
@@ -29,7 +31,7 @@ class HelloWorld extends \Magento\Framework\View\Element\Template {
                 array(
                     'attribute'=>'price',
                     'from'=>200,
-                    'to'=>500,
+                    'to'=>700,
                 ),
             ))
             ->load();

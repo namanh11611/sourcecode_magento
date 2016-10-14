@@ -1,0 +1,49 @@
+<!--Form Tittle-->
+<div class="page-title">
+    <h2>Form Add Product</h2>
+</div>
+<!--Form Information-->
+<form id="product-form-validate" method="post" action="<?php echo $block->getActionOfForm()?>">
+    <div class="fieldset">
+        <h2 class="legend">Product Information</h2>
+        <ul class="form-list" style="list-style-type:none">
+<!--            <li class="fields">-->
+<!--                <div class="field id">-->
+<!--                    <label class="required" for="id">ID</label>-->
+<!--                    <div class="input-box">-->
+<!--                        <input type="text" class="input-text required-entry" maxlength="25" title="ID" value="" name="id" id="id" size="30">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </li>-->
+            <li class="fields">
+                <div class="field product">
+                    <label class="required" for="product">Product Id</label>
+                    <div class="input-box">
+                        <input type="text" class="input-text required-entry" maxlength="25" title="Product" value="" name="product" id="product" size="30">
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+                <div class="field price">
+                    <label class="required" for="price">New Price</label>
+                    <div class="input-box">
+                        <input type="text" class="input-text required-entry" maxlength="25" title="Price" value="" name="price" id="price" size="30">
+                    </div>
+                </div>
+            </li>
+            <li class="fields">
+                <div class="field status">
+                    <label class="required" for="status">Status</label>
+                    <div class="input-box">
+                        <input type="radio" class="input-text required-entry" title="Status" value="available" name="status" id="status"> Available <br>
+                        <input type="radio" class="input-text required-entry" title="Status" value="unavailable" name="status" id="status"> Unavailable
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--Button-->
+    <div class="buttons-set">
+        <button class="button" title="Add" type="submit"><span><span>Add</span></span></button>
+    </div>
+</form>

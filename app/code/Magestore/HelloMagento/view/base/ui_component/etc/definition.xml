@@ -2,6 +2,7 @@
     <hellomagento_product_grid class="Magestore\HelloMagento\Component\Simple">
         <argument name="data" xsi:type="array">
             <item name="template" xsi:type="string">templates/our-template</item>
+            <!-- Comment dòng trên thì gặp lỗi: "Object DOMDocument should be created." ???-->
         </argument>
     </hellomagento_product_grid>
 </components>

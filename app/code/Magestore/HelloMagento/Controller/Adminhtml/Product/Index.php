@@ -17,10 +17,10 @@ class Index extends \Magento\Backend\App\Action
         $resultPage = $this->resultPageFactory->create();
 
         //Set the menu which will be active for this page
-        $resultPage->setActiveMenu('Magestore_HelloMagento::manager_product');
+//        $resultPage->setActiveMenu('Magestore_HelloMagento::manager_product');
 
         //Set the header title of grid
-        $resultPage->getConfig()->getTitle()->prepend(__('Manage Product'));
+//        $resultPage->getConfig()->getTitle()->prepend(__('Manage Product'));
 
         //Add bread crumb
 //        $resultPage->addBreadcrumb(__('Magestore'), __('Magestore'));
