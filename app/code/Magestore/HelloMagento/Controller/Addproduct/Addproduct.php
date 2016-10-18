@@ -19,9 +19,13 @@ class Addproduct extends \Magento\Framework\App\Action\Action {
         $status = $this->getRequest()->getParam('status');
 
         $model = $this->_objectManager->create('Magestore\HelloMagento\Model\Product');
-        $model->setData('product_id', $product_id);
-        $model->setData('new_price', $new_price);
-        $model->setData('status', $status);
+        $model->setData('product_id', (int) $product_id);
+        $model->setData('new_price', (float) $new_price);
+        if($status == 'available') {
+            $model->setData('status', 1);
+        } else {
+            $model->setData('status', 0);
+        }
         $model->save();
 
         // Nhiệm vụ bây giờ là lưu cái param này vào CSDL???
