@@ -14,21 +14,19 @@ class Addproduct extends \Magento\Framework\App\Action\Action {
     public function execute() {
         // Lấy dữ liệu ra
         $params = $this->getRequest()->getParams();
-        $id = $this->getRequest()->getParam('id');
-        $product_id = $this->getRequest()->getParam('product_id');
-        $new_price = $this->getRequest()->getParam('new_price');
+        $product_id = $this->getRequest()->getParam('product');
+        $new_price = $this->getRequest()->getParam('price');
         $status = $this->getRequest()->getParam('status');
 
         $model = $this->_objectManager->create('Magestore\HelloMagento\Model\Product');
-        $model->setData('id', $id);
         $model->setData('product_id', $product_id);
         $model->setData('new_price', $new_price);
         $model->setData('status', $status);
         $model->save();
 
         // Nhiệm vụ bây giờ là lưu cái param này vào CSDL???
-//        \Zend_Debug::dump($params);
-//        die();
+        \Zend_Debug::dump($params);
+        die();
 
         // Chuyển hướng sang productlist, sau khi xử lý dữ liệu sẽ chuyển lại từ addproduct về productlist
         $this->_redirect('hellomagento/product/productlist');
