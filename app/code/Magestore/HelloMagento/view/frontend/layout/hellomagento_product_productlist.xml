@@ -5,9 +5,9 @@
             <action method="setTitle" translate="title"><title>Product List</title></action>
         </reference>
         <referenceContainer name="content">
-            <!--Trong content của layout này sẽ hiển thị cả list product và form-->
+            <!--Trong content của layout này sẽ hiển thị cả block của list product và form-->
             <block class="Magestore\HelloMagento\Block\ProductList" name="productlist" template="Magento_Catalog::product/list.phtml"/>
-            <block class="Magestore\HelloMagento\Block\Form" name="form" template="Magestore_HelloMagento::form.phtml"/>
+            <!--<block class="Magestore\HelloMagento\Block\Form" name="form" template="Magestore_HelloMagento::form.phtml"/>-->
         </referenceContainer>
     </body>
 </page>

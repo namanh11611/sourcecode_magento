@@ -38,18 +38,18 @@ class ProductList extends ListProduct {
         parent::_getProductCollection();
         $this->_productCollection
             ->addAttributeToSelect('*')
-            ->addAttributeToFilter(array(
-                array(
-                    'attribute'=>'price',
-                    'from'=>0,
-                    'to'=>100,
-                ),
-                array(
-                    'attribute'=>'price',
-                    'from'=>200,
-                    'to'=>500,
-                ),
-            ))
+//            ->addAttributeToFilter(array(
+//                array(
+//                    'attribute'=>'price',
+//                    'from'=>0,
+//                    'to'=>100,
+//                ),
+//                array(
+//                    'attribute'=>'price',
+//                    'from'=>200,
+//                    'to'=>500,
+//                ),
+//            ))
             ->load();
         return $this->_productCollection;
     }

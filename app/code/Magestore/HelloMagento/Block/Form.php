@@ -14,6 +14,13 @@ class Form extends \Magento\Framework\View\Element\Template
         return parent::__construct($context);
     }
 
+    public function getProductCollection()
+    {
+        // Lọc sản phẩm hiển thị ra bảng được tạo bằng HTML trong file form.phtml
+        $collection = $this->collectionFactory->create()->addAttributeToSelect('id')->load();
+        return $collection;
+    }
+
     public function getActionOfForm()
     {
         // Khi gọi Block này, chúng ta sẽ gọi đến action addproduct
