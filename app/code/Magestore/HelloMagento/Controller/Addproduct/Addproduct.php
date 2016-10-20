@@ -27,6 +27,8 @@ class Addproduct extends \Magento\Framework\App\Action\Action {
         $model->save();
 
 //        \Zend_Debug::dump((int) $product_id);
+//        \Zend_Debug::dump((float) $new_price);
+//        \Zend_Debug::dump((int) $status);
 //        die();
 
         // Chuyển hướng sang productlist, sau khi xử lý dữ liệu sẽ chuyển lại từ addproduct về productlist
