@@ -13,7 +13,7 @@ class Addproduct extends \Magento\Framework\App\Action\Action {
 
     public function execute() {
         // Lấy toàn bộ dữ liệu ra từ form.phtml
-//        $params = $this->getRequest()->getParams();
+        // $params = $this->getRequest()->getParams();
         // Lấy từng trường dữ liệu từ form.phtml
         $product_id = $this->getRequest()->getParam('product');
         $new_price = $this->getRequest()->getParam('price');
@@ -26,12 +26,10 @@ class Addproduct extends \Magento\Framework\App\Action\Action {
         $model->setData('status', (int) $status);
         $model->save();
 
-//        \Zend_Debug::dump((int) $product_id);
-//        \Zend_Debug::dump((float) $new_price);
-//        \Zend_Debug::dump((int) $status);
-//        die();
+        // Tiếp theo, chúng ta sẽ dùng event để edit price của product
+        $this->_eventManager->dispatch('change_product_price_demo', ['product_id' => $product_id, 'new_price' => $new_price]);
 
-        // Chuyển hướng sang productlist, sau khi xử lý dữ liệu sẽ chuyển lại từ addproduct về productlist
+        // Sau khi xử lý dữ liệu sẽ chuyển hướng từ addproduct sang productlist
         $this->_redirect('hellomagento/product/productlist');
     }
 }

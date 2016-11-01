@@ -40,6 +40,6 @@ class HelloWorld extends \Magento\Framework\View\Element\Template {
 
     public function sayHello()
     {
-        return __('Hello from Template!');
+        return __('Hello from Block HelloWorld!');
     }
 }
