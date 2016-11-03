@@ -36,10 +36,10 @@ class ChangeProductPrice implements \Magento\Framework\Event\ObserverInterface
         // Chỉ còn một bước nữa là set price cho product???
         // Phải làm thế nào???
 
-        $product->setPrice($new_price);
-//        $product->setCustomPrice($new_price);
-//        $product->setOriginalCustomPrice($new_price);
-//        $product->getProduct()->setIsSuperMode(true);
+        $product->setFinalPrice($new_price);
+        $product->setCustomPrice($new_price);
+        $product->setOriginalCustomPrice($new_price);
+        $product->setIsSuperMode(true);
 
         echo "<pre>";
         print_R($product->getPrice());
@@ -48,21 +48,19 @@ class ChangeProductPrice implements \Magento\Framework\Event\ObserverInterface
         return $this;
     }
 
-//    public function invoke(\Magento\Framework\Event\Observer $observer)
-//    {
-//        $item = $observer->getEvent()->getData('quote_item');
-//        $product = $observer->getEvent()->getData('product');
-//        $item = ( $item->getParentItem() ? $item->getParentItem() : $item );
-//
-//        // Load the custom price
-//        $price = $product->getPrice() + 10; // 10 is custom price. It will increase in product price.
-//
-//        // Set the custom price
-//        $item->setCustomPrice($price);
-//        $item->setOriginalCustomPrice($price);
-//
-//        // Enable super mode on the product.
-//        $item->getProduct()->setIsSuperMode(true);
-//    }
+    public function changeprice(Varien_Event_Observer $event)
+    {
+//        $observer->getProduct()->setFinalPrice(5);
+        if(Mage::app()->getRequest()->getParam('id')) {
+            $price_to_add = Mage::getModel('catalog/product')->load(Mage::app()->getRequest()->getParam('id')->getPrice());
+            $product = $event->getEvent()->getProduct();
+            $original_price = $product->getPrice();
+            $customprice = $original_price + $price_to_add;
+            $product->setPrice($customprice);
+        }
+        echo 'call';
+        exit;
+    }
+
 
 }

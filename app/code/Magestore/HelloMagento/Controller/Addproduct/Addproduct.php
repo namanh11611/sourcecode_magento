@@ -21,13 +21,13 @@ class Addproduct extends \Magento\Framework\App\Action\Action {
 
         // Tạo Model mới và lưu trữ dữ liệu
         $model = $this->_objectManager->create('Magestore\HelloMagento\Model\Product');
-        $model->setData('product_id', (int) $product_id);
-        $model->setData('new_price', (float) $new_price);
+        $model->setData('id', (int) $product_id);
+        $model->setData('final_price', (float) $new_price);
         $model->setData('status', (int) $status);
         $model->save();
 
         // Tiếp theo, chúng ta sẽ dùng event để edit price của product
-        $this->_eventManager->dispatch('change_product_price_demo', ['product_id' => $product_id, 'new_price' => $new_price]);
+        $this->_eventManager->dispatch('catalog_product_get_final_price', ['product' => $model]);
 
         // Sau khi xử lý dữ liệu sẽ chuyển hướng từ addproduct sang productlist
         $this->_redirect('hellomagento/product/productlist');

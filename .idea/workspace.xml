@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4b3136c-a0e9-4037-be0c-aa62434482b1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Observer/ChangeProductPrice.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/etc/events.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/etc/frontend/events.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/webServers.xml" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Block/Form.php" afterPath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Block/Form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Block/HelloWorld.php" afterPath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Block/HelloWorld.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Block/ProductList.php" afterPath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Block/ProductList.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Controller/Addproduct/Addproduct.php" afterPath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Controller/Addproduct/Addproduct.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/view/frontend/templates/helloworld.phtml" afterPath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/view/frontend/templates/helloworld.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/view/frontend/templates/productlist.phtml" afterPath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/view/frontend/templates/productlist.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Observer/ChangeProductPrice.php" afterPath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Observer/ChangeProductPrice.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/etc/frontend/events.xml" afterPath="$PROJECT_DIR$/app/code/Magestore/HelloMagento/etc/frontend/events.xml" />
     </list>
     <ignored path="sourcecode_magento.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +29,8 @@
       <file leaf-file-name="Addproduct.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/code/Magestore/HelloMagento/Controller/Addproduct/Addproduct.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="29" column="65" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
+            <state relative-caret-position="393">
+              <caret line="29" column="79" selection-start-line="29" selection-start-column="79" selection-end-line="29" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -48,13 +39,21 @@
       <file leaf-file-name="ChangeProductPrice.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/code/Magestore/HelloMagento/Observer/ChangeProductPrice.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="65" column="7" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+            <state relative-caret-position="130">
+              <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="e#6#90#0#PHP" expanded="true" />
-                <element signature="e#1262#1335#0#PHP" expanded="false" />
-                <marker date="1477973665924" expanded="true" signature="824:1932" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="events.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/code/Magestore/HelloMagento/etc/frontend/events.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,9 +121,9 @@
         <option value="$PROJECT_DIR$/app/code/Magestore/HelloMagento/view/frontend/templates/productlist.phtml" />
         <option value="$PROJECT_DIR$/app/code/Magestore/HelloMagento/view/frontend/templates/helloworld.phtml" />
         <option value="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Block/Form.php" />
-        <option value="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Controller/Addproduct/Addproduct.php" />
-        <option value="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Observer/ChangeProductPrice.php" />
         <option value="$PROJECT_DIR$/app/code/Magestore/HelloMagento/etc/frontend/events.xml" />
+        <option value="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Observer/ChangeProductPrice.php" />
+        <option value="$PROJECT_DIR$/app/code/Magestore/HelloMagento/Controller/Addproduct/Addproduct.php" />
       </list>
     </option>
   </component>
@@ -170,6 +169,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -574,7 +574,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -671,18 +670,19 @@
       <workItem from="1476957864465" duration="26000" />
       <workItem from="1477011082272" duration="3734000" />
       <workItem from="1477016479878" duration="6300000" />
-      <workItem from="1477963484655" duration="7341000" />
+      <workItem from="1477963484655" duration="8391000" />
+      <workItem from="1478133722912" duration="8995000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="200643000" />
+    <option name="totallyTimeSpent" value="210688000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21961933" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24304539" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -982,7 +982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,7 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1030,23 +1028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/Magestore/HelloMagento/etc/frontend/events.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="69" selection-start-line="0" selection-start-column="4" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/code/Magestore/HelloMagento/etc/module.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="62" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,7 +1043,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,22 +1062,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/Magestore/HelloMagento/etc/module.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="62" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/code/Magestore/HelloMagento/Controller/Addproduct/Addproduct.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="29" column="65" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
+        <state relative-caret-position="393">
+          <caret line="29" column="79" selection-start-line="29" selection-start-column="79" selection-end-line="29" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/code/Magestore/HelloMagento/etc/frontend/events.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/code/Magestore/HelloMagento/Observer/ChangeProductPrice.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="65" column="7" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+        <state relative-caret-position="130">
+          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="e#6#90#0#PHP" expanded="true" />
-            <element signature="e#1262#1335#0#PHP" expanded="false" />
-            <marker date="1477973665924" expanded="true" signature="824:1932" ph="..." />
           </folding>
         </state>
       </provider>
