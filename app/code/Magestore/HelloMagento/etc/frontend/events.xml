@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../lib/internal/Magento/Framework/Event/etc/events.xsd">
-    <event name="catalog_product_get_final_price">
+    <event name="change_product_price">
         <observer name="change_product_price_frontend" instance="Magestore\HelloMagento\Observer\ChangeProductPrice" method="invoke"/>
+    </event>
+    <event name="catalog_product_get_final_price">
+        <observer name="catalog_final_price_demo" instance="Magestore\HelloMagento\Observer\ProcessFrontFinalPriceObserver"/>
+    </event>
+    <event name="catalog_block_product_list_collection">
+        <observer name="list_collection_demo" instance="Magestore\HelloMagento\Observer\ListCollectionObserver"/>
     </event>
 </config>

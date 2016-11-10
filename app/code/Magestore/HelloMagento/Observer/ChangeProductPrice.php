@@ -9,8 +9,9 @@
 namespace Magestore\HelloMagento\Observer;
 
 use Magento\Catalog\Model\ProductFactory;
+use Magento\Framework\Event\ObserverInterface;
 
-class ChangeProductPrice implements \Magento\Framework\Event\ObserverInterface
+class ChangeProductPrice implements ObserverInterface
 {
 
     protected $productFactory;
