@@ -38,6 +38,7 @@ class ProductList extends ListProduct {
         parent::_getProductCollection();
         $this->_productCollection
             ->addAttributeToSelect('*')
+            ->addAttributeToFilter('entity_id', 1)
             ->load();
         return $this->_productCollection;
     }

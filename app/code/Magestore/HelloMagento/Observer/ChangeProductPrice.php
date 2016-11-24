@@ -14,6 +14,10 @@ use Magento\Framework\Event\ObserverInterface;
 class ChangeProductPrice implements ObserverInterface
 {
 
+    // Đây là Observer cũ, do t tự tạo ra để bắt event tự tạo
+    // Nhưng giờ thì không dùng nữa rồi
+    // Thế nên đừng đọc nó mất công
+
     protected $productFactory;
 
     public function __construct(ProductFactory $productFactory)
