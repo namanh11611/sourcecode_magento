@@ -1,0 +1,29 @@
+<div>
+    <p id="test">Require Module in Source</p>
+</div>
+
+<!--<script type="text/javascript">-->
+<!--    require([-->
+<!--        'jquery'-->
+<!--    ], function ($) {-->
+<!--        $(document).ready(function(){-->
+<!--            alert('123');-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
+
+<!--<script type="text/javascript">-->
+<!--    require([-->
+<!--        'Magestore_HelloMagento/js/magestore’-->
+<!--    ], function () {-->
+<!---->
+<!--    });-->
+<!--</script>-->
+
+<script type="text/javascript">
+    require([
+        'Magestore_HelloMagento/js/example'
+    ], function(example){
+        alert(example.message);
+    });
+</script>
