@@ -3,7 +3,7 @@
     <h2>Form Edit Product's Price</h2>
 </div>
 <!--Form Information-->
-<form id="product-form-validate" method="post" action="<?php echo $block->getActionOfForm()?>">
+<form id="product-form-validate">
     <div class="fieldset">
         <h2 class="legend">Product Information</h2>
         <ul class="form-list" style="list-style-type:none">
@@ -44,8 +44,31 @@
             </li>
         </ul>
     </div>
-    <!--Button-->
-    <div class="buttons-set">
-        <button class="button" title="Add" type="submit"><span><span>Update</span></span></button>
-    </div>
 </form>
+<button class="button" title="Update" id="update" type="reset"><span>Update</span></button>
+
+<div class="content">
+    <p id="change">Change to List Product -> -> -></p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#update").click(function () {
+            var id = $('#id').val();
+            var price = $('#final_price').val();
+            var status = $('#status').val();
+
+            // Ít nhất price cũng phải có giá trị điền vào thì nó mới alert được
+            $.ajax({
+                // Gửi request đến url của Controller Addproduct.php để lưu dữ liệu
+                url: "<?php echo $block->getUrl('hellomagento/addproduct/addproduct'); ?>",
+                data: {id: id, price: price, status: status},
+                success: function(result) {
+                    $("#change").html(result);
+                }
+            });
+        });
+    });
+
+</script>

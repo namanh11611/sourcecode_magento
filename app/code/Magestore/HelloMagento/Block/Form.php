@@ -26,14 +26,14 @@ class Form extends \Magento\Framework\View\Element\Template
     }
 
     // Load sản phẩm bằng id để thay đổi giá của nó
-    public function getLoadProduct($id)
-    {
-        var_dump("I am Here");
-        exit;
-        return $this->_productFactory->create()->load($id);
-    }
+//    public function getLoadProduct($id)
+//    {
+//        var_dump("I am Here");
+//        die;
+//        return $this->_productFactory->create()->load($id);
+//    }
 
-    // Khi gọi Block này, chúng ta sẽ gọi đến action addproduct
+    // Khi gọi click vào button sẽ gọi hàm này, sau đó chúng ta sẽ chuyển đến action addproduct
     public function getActionOfForm()
     {
         return $this->getUrl('hellomagento/addproduct/addproduct');

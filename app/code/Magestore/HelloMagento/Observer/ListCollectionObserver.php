@@ -13,6 +13,7 @@ use Magento\Framework\Event\Observer;
 class ListCollectionObserver implements ObserverInterface
 {
     // OK, Observer này bắt sự kiện khi load một list các sản phẩm
+    // Bởi vì sau khi điền form sẽ hiển thị list sản phẩm nên đây chính là event mà chúng ta cần
 
     public function execute(Observer $observer)
     {
@@ -20,9 +21,10 @@ class ListCollectionObserver implements ObserverInterface
 
         foreach ($collection as $product)
         {
-//            \Zend_Debug::dump($product);
-            $product->setPrice(100);
-            $product->setFinalPrice(100);
+//            $product->setPrice(100);
+
+            // Hình như là chúng ta không cần thằng dưới đây?
+            // $product->setFinalPrice(100);
         }
     }
 }

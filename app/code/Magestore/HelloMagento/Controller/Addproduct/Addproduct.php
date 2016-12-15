@@ -12,11 +12,14 @@ class Addproduct extends \Magento\Framework\App\Action\Action
     }
 
     public function execute() {
+
+        // Magento nó phát event sẵn rồi, không cần phát lại đâu, chỉ cần bắt và xử lý
+
         // Lấy toàn bộ dữ liệu ra từ form.phtml
         // $params = $this->getRequest()->getParams();
         // Lấy từng trường dữ liệu từ form.phtml
         $product_id = $this->getRequest()->getParam('id');
-        $new_price = $this->getRequest()->getParam('final_price');
+        $new_price = $this->getRequest()->getParam('price');
         $status = $this->getRequest()->getParam('status');
 
         // Tạo Model mới và lưu trữ dữ liệu điền vào form
@@ -29,27 +32,22 @@ class Addproduct extends \Magento\Framework\App\Action\Action
         $newModel = $this->_objectManager->create('Magestore\HelloMagento\Model\Product');
         $resourceModel = $this->_objectManager->create('Magestore\HelloMagento\Model\ResourceModel\Product');
         $resourceModel->load($newModel, $model->getId());
-        \zend_debug::dump($newModel->getData());
-        die;
 
-        // Ơ, cái này load được sản phẩm thật rồi này??????????????????????????
-        // ??????????????????????
-        $repo = $this->_objectManager->get('Magento\Catalog\Model\ProductRepository');
-        $search_criteria = $this->_objectManager->create(
-            'Magento\Framework\Api\SearchCriteriaInterface'
-        );
-        $result = $repo->getList($search_criteria);
-        $products = $result->getItems();
-        foreach($products as $product)
-        {
-            echo $product->getPrice(),"\n";
-        }
+//        echo "Controller Addproduct/Addproduct ";
+//        \zend_debug::dump($newModel->getData());
 //        die;
-
-        // Magento nó phát event sẵn rồi, không cần phát lại đâu, chỉ cần bắt và xử lý
-//        $this->_eventManager->dispatch('catalog_product_get_final_price', ['edit_product' => $model]);
 
         // Sau khi xử lý dữ liệu sẽ chuyển hướng từ addproduct sang productlist
         $this->_redirect('hellomagento/product/productlist');
+
+        $block = $this->_view->getLayout()
+            ->createBlock('Magestore\HelloMagento\Block\ProductList')
+            ->setTemplate('Magento_Catalog::product/list.phtml')
+            ->toHtml();
+        return $this->getResponse()->setBody($block);
+
+//        echo $block;
+//        die;
+//        return $block;
     }
 }
