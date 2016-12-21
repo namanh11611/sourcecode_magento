@@ -42,9 +42,4 @@ class ProductList extends ListProduct {
             ->load();
         return $this->_productCollection;
     }
-
-    public function sayHelloList()
-    {
-        return __('Hello Product List!');
-    }
 }

@@ -7,7 +7,7 @@
         <referenceContainer name="content">
             <!--Trong content của layout này sẽ hiển thị cả block của form và list product-->
             <block class="Magestore\HelloMagento\Block\Form" name="form" template="Magestore_HelloMagento::form.phtml"/>
-            <block class="Magestore\HelloMagento\Block\ProductList" name="productlist" template="Magento_Catalog::product/list.phtml"/>
+            <!--<block class="Magestore\HelloMagento\Block\ProductList" name="productlist" template="Magento_Catalog::product/list.phtml"/>-->
         </referenceContainer>
     </body>
 </page>

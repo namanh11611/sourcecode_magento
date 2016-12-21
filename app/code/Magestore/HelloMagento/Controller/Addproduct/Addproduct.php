@@ -22,32 +22,31 @@ class Addproduct extends \Magento\Framework\App\Action\Action
         $new_price = $this->getRequest()->getParam('price');
         $status = $this->getRequest()->getParam('status');
 
-        // Tạo Model mới và lưu trữ dữ liệu điền vào form
-        $model = $this->_objectManager->create('Magestore\HelloMagento\Model\Product');
-        $model->setData('product_id', (int) $product_id);
-        $model->setData('new_price', (float) $new_price);
-        $model->setData('status', (int) $status);
-        $model->save();
+        // Load sản phẩm và update price & status cho nó
+        $oldModel = $this->_objectManager
+            ->get('Magestore\HelloMagento\Model\ResourceModel\Product\Collection')
+            ->addFieldToFilter('product_id', $product_id);
+        foreach ($oldModel as $model) {
+            $model->setData('new_price', (float) $new_price);
+            $model->setData('status', (int) $status);
+            $model->save();
+        }
+//        \Zend_debug::dump($oldModel->getData());
+//        die();
 
-        $newModel = $this->_objectManager->create('Magestore\HelloMagento\Model\Product');
-        $resourceModel = $this->_objectManager->create('Magestore\HelloMagento\Model\ResourceModel\Product');
-        $resourceModel->load($newModel, $model->getId());
-
-//        echo "Controller Addproduct/Addproduct ";
-//        \zend_debug::dump($newModel->getData());
+//        $newModel = $this->_objectManager->create('Magestore\HelloMagento\Model\Product');
+//        $resourceModel = $this->_objectManager->create('Magestore\HelloMagento\Model\ResourceModel\Product');
+//        $resourceModel->load($newModel, $model->getId());
+//        \Zend_debug::dump($newModel->getData());
 //        die;
 
         // Sau khi xử lý dữ liệu sẽ chuyển hướng từ addproduct sang productlist
-        $this->_redirect('hellomagento/product/productlist');
+        //$this->_redirect('hellomagento/product/productlist');
 
         $block = $this->_view->getLayout()
             ->createBlock('Magestore\HelloMagento\Block\ProductList')
             ->setTemplate('Magento_Catalog::product/list.phtml')
             ->toHtml();
         return $this->getResponse()->setBody($block);
-
-//        echo $block;
-//        die;
-//        return $block;
     }
 }

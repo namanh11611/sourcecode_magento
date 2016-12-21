@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Magestore_HelloMagento::hello" title="Custom Menu" module="Magestore_HelloMagento" sortOrder="50" resource="Magestore_HelloMagento::hello"/>
-        <add id="Magestore_HelloMagento::hello_manage_items" title="Manage Product" module="Magestore_HelloMagento" sortOrder="50" parent="Magestore_HelloMagento::hello" action="hellomagento/product" resource="Magestore_HelloMagento::hello_manage_items"/>
-        <!--<add id="Magestore_HelloMagento::hello_configuration" title="Configuration" module="Magestore_HelloMagento" sortOrder="50" parent="Magestore_HelloMagento::hello" action="adminhtml/system_config/edit/section/hello" resource="Magestore_HelloMagento::hello_configuration"/>-->
+        <add id="Magestore_HelloMagento::hello" title="Hello" module="Magestore_HelloMagento" sortOrder="20" resource="Magestore_HelloMagento::hello"/>
+        <add id="Magestore_HelloMagento::hello_manage_products" title="Manage Product" module="Magestore_HelloMagento" sortOrder="10" parent="Magestore_HelloMagento::hello" action="hellomagento/product" resource="Magestore_HelloMagento::hello_manage_products"/>
+        <add id="Magestore_HelloMagento::hello_edit_products" title="Edit Product" module="Magestore_HelloMagento" sortOrder="30" parent="Magestore_HelloMagento::hello" action="hellomagento/edit" resource="Magestore_HelloMagento::hello_edit_products"/>
+        <add id="Magestore_HelloMagento::hello_configuration" title="Configuration" module="Magestore_HelloMagento" sortOrder="60" parent="Magestore_HelloMagento::hello" action="adminhtml/system_config/edit/section/hello" resource="Magestore_HelloMagento::hello_configuration"/>
     </menu>
 </config>

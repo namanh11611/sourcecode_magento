@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
+    <!-- Tham số đầu vào cho các thành phần quản trị -->
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">hellomagento_product_grid.hellomagento_product_grid_data_source</item>
-            <item name="deps" xsi:type="string">hellomagento_product_grid.hellomagento_product_grid_data_source</item>
+            <item name="provider" xsi:type="string">hellomagento_product_listing.hellomagento_product_listing_data_source</item>
+            <item name="deps" xsi:type="string">hellomagento_product_listing.hellomagento_product_listing_data_source</item>
         </item>
         <item name="spinner" xsi:type="string">hellomagento_product_columns</item>
         <item name="buttons" xsi:type="array">
             <item name="add" xsi:type="array">
                 <item name="name" xsi:type="string">add</item>
-                <item name="label" xsi:type="string" translate="true">Add New Block</item>
+                <item name="label" xsi:type="string" translate="true">Add New Product</item>
                 <item name="class" xsi:type="string">primary</item>
                 <item name="url" xsi:type="string">*/*/new</item>
             </item>
         </item>
     </argument>
-    <dataSource name="hellomagento_product_grid_data_source">
+
+    <!-- Khai báo DataSource -->
+    <dataSource name="hellomagento_product_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Magestore\HelloMagento\Model\DataProvider</argument>
-            <argument name="name" xsi:type="string">hellomagento_product_grid_data_source</argument>
-            <argument name="primaryFieldName" xsi:type="string">block_id</argument>
+            <argument name="name" xsi:type="string">hellomagento_product_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -32,6 +37,8 @@
             </argument>
         </argument>
     </dataSource>
+
+    <!-- Toolbar -->
     <listingToolbar name="listing_top">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
@@ -91,7 +98,7 @@
                         <item name="type" xsi:type="string">edit</item>
                         <item name="label" xsi:type="string" translate="true">Edit</item>
                         <item name="callback" xsi:type="array">
-                            <item name="provider" xsi:type="string">hellomagento_product_grid.hellomagento_product_grid.hellomagento_product_columns_editor</item>
+                            <item name="provider" xsi:type="string">hellomagento_product_listing.hellomagento_product_listing.hellomagento_product_columns_editor</item>
                             <item name="target" xsi:type="string">editSelected</item>
                         </item>
                     </item>
@@ -100,121 +107,73 @@
         </massaction>
         <paging name="listing_paging"/>
     </listingToolbar>
+
+    <!-- Bảng chứa các column -->
     <columns name="hellomagento_product_columns">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
-                <item name="editorConfig" xsi:type="array">
-                    <item name="selectProvider" xsi:type="string">hellomagento_product_grid.hellomagento_product_grid.hellomagento_product_columns.ids</item>
-                    <item name="enabled" xsi:type="boolean">true</item>
-                    <item name="indexField" xsi:type="string">block_id</item>
-                    <item name="clientConfig" xsi:type="array">
-                        <item name="saveUrl" xsi:type="url" path="cms/block/inlineEdit"/>
-                        <item name="validateBeforeSave" xsi:type="boolean">false</item>
-                    </item>
-                </item>
-                <item name="childDefaults" xsi:type="array">
-                    <item name="fieldAction" xsi:type="array">
-                        <item name="provider" xsi:type="string">hellomagento_product_grid.hellomagento_product_grid.hellomagento_product_columns_editor</item>
-                        <item name="target" xsi:type="string">startEdit</item>
-                        <item name="params" xsi:type="array">
-                            <item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
-                            <item name="1" xsi:type="boolean">true</item>
-                        </item>
-                    </item>
+                <item name="storageConfig" xsi:type="array">
+                    <item name="provider" xsi:type="string">hellomagento_product_listing.hellomagento_product_listing.listing_top.bookmarks</item>
+                    <item name="namespace" xsi:type="string">current</item>
                 </item>
             </item>
         </argument>
         <selectionsColumn name="ids">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="indexField" xsi:type="string">block_id</item>
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">55</item>
+                    <item name="indexField" xsi:type="string">product_id</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
                 </item>
             </argument>
         </selectionsColumn>
-        <column name="block_id">
+
+        <column name="product_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="filter" xsi:type="string">integer</item>
                     <item name="sorting" xsi:type="string">asc</item>
                     <item name="label" xsi:type="string" translate="true">ID</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
                 </item>
             </argument>
         </column>
-        <column name="title">
+
+        <column name="price">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="editor" xsi:type="array">
-                        <item name="editorType" xsi:type="string">text</item>
-                        <item name="validation" xsi:type="array">
-                            <item name="required-entry" xsi:type="boolean">true</item>
-                        </item>
-                    </item>
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Title</item>
+                    <item name="filter" xsi:type="string">decimal</item>
+                    <item name="label" xsi:type="string" translate="true">Price</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
                 </item>
             </argument>
         </column>
-        <column name="identifier">
+
+        <column name="status">
             <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Magestore\HelloMagento\Ui\Component\Listing\Column\Status</item>
                 <item name="config" xsi:type="array">
-                    <item name="editor" xsi:type="array">
-                        <item name="editorType" xsi:type="string">text</item>
-                        <item name="validation" xsi:type="array">
-                            <item name="validate-xml-identifier" xsi:type="boolean">true</item>
-                            <item name="required-entry" xsi:type="boolean">true</item>
-                        </item>
-                    </item>
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Identifier</item>
-                </item>
-            </argument>
-        </column>
-        <column name="store_id" class="Magento\Store\Ui\Component\Listing\Column\Store">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
-                    <item name="sortable" xsi:type="boolean">false</item>
-                    <item name="label" xsi:type="string" translate="true">Store View</item>
-                </item>
-            </argument>
-        </column>
-        <column name="is_active">
-            <argument name="data" xsi:type="array">
-                <item name="options" xsi:type="object">Magento\Cms\Model\Block\Source\IsActive</item>
-                <item name="config" xsi:type="array">
+                    <item name="editor" xsi:type="string">select</item>
                     <item name="filter" xsi:type="string">select</item>
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
-                    <item name="editor" xsi:type="string">select</item>
                     <item name="dataType" xsi:type="string">select</item>
                     <item name="label" xsi:type="string" translate="true">Status</item>
+                    <item name="sortOrder" xsi:type="number">40</item>
                 </item>
             </argument>
         </column>
-        <column name="creation_time" class="Magento\Ui\Component\Listing\Columns\Date">
+
+        <actionsColumn name="actions" class="Magestore\HelloMagento\Ui\Component\Listing\Column\EditActions">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">dateRange</item>
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
-                    <item name="dataType" xsi:type="string">date</item>
-                    <item name="label" xsi:type="string" translate="true">Created</item>
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">107</item>
+                    <item name="indexField" xsi:type="string">product_id</item>
+                    <item name="sortOrder" xsi:type="number">91</item>
                 </item>
-            </argument>
-        </column>
-        <column name="update_time" class="Magento\Ui\Component\Listing\Columns\Date">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">dateRange</item>
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/date</item>
-                    <item name="dataType" xsi:type="string">date</item>
-                    <item name="label" xsi:type="string" translate="true">Modified</item>
-                </item>
-            </argument>
-        </column>
-        <actionsColumn name="actions" class="Magento\Cms\Ui\Component\Listing\Column\BlockActions">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="indexField" xsi:type="string">block_id</item>
-                </item>
+                <item name="idField" xsi:type="string">timeslot_id</item>
+                <item name="userUrlPathEdit" xsi:type="string">hellomagento/product/edit</item>
             </argument>
         </actionsColumn>
     </columns>

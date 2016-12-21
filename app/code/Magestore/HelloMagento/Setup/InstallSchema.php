@@ -9,10 +9,11 @@ class InstallSchema implements InstallSchemaInterface
 {
     public function install(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
-        $setup->startSetup();
+        $installer = $setup;
+        $installer->startSetup();
 
-        $table = $setup->getConnection()->newTable(
-            $setup->getTable('magestore_magento')
+        $table = $installer->getConnection()->newTable(
+            $installer->getTable('magestore_magento')
         )->addColumn(
             'id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
@@ -40,8 +41,9 @@ class InstallSchema implements InstallSchemaInterface
         )->setComment(
             'Magestore Product Table'
         );
-        $setup->getConnection()->createTable($table);
+        $installer->getConnection()->createTable($table);
 
-        $setup->endSetup();
+        $installer->endSetup();
+        return $this;
     }
 }
