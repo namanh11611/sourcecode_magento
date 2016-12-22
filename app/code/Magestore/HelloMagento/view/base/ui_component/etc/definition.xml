@@ -1,8 +1,0 @@
-<components xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_definition.xsd">
-    <hellomagento_product_grid class="Magestore\HelloMagento\Component\Simple">
-        <argument name="data" xsi:type="array">
-            <item name="template" xsi:type="string">templates/our-template</item>
-            <!-- Comment dòng trên thì gặp lỗi: "Object DOMDocument should be created." ???-->
-        </argument>
-    </hellomagento_product_grid>
-</components>

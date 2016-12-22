@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="Magestore_HelloMagento::hello" title="Hello" module="Magestore_HelloMagento" sortOrder="20" resource="Magestore_HelloMagento::hello"/>
         <add id="Magestore_HelloMagento::hello_manage_products" title="Manage Product" module="Magestore_HelloMagento" sortOrder="10" parent="Magestore_HelloMagento::hello" action="hellomagento/product" resource="Magestore_HelloMagento::hello_manage_products"/>

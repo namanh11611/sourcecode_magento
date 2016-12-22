@@ -22,17 +22,17 @@
     <!-- Khai báo DataSource -->
     <dataSource name="hellomagento_product_listing_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Magestore\HelloMagento\Model\DataProvider</argument>
+            <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
             <argument name="name" xsi:type="string">hellomagento_product_listing_data_source</argument>
-            <argument name="primaryFieldName" xsi:type="string">id</argument>
-            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="primaryFieldName" xsi:type="string">product_id</argument>
+            <argument name="requestFieldName" xsi:type="string">product_id</argument>
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <!--<item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>-->
                     <item name="update_url" xsi:type="url" path="mui/index/render"/>
-                    <item name="storageConfig" xsi:type="array">
-                        <item name="indexField" xsi:type="string">block_id</item>
-                    </item>
+                    <!--<item name="storageConfig" xsi:type="array">-->
+                        <!--<item name="indexField" xsi:type="string">block_id</item>-->
+                    <!--</item>-->
                 </item>
             </argument>
         </argument>
@@ -48,6 +48,7 @@
         <bookmark name="bookmarks"/>
         <columnsControls name="columns_controls"/>
         <filterSearch name="fulltext"/>
+
         <filters name="listing_filters">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -78,6 +79,8 @@
                 </argument>
             </filterSelect>
         </filters>
+
+        <!-- Mass Action -->
         <massaction name="listing_massaction">
             <action name="delete">
                 <argument name="data" xsi:type="array">
@@ -105,76 +108,79 @@
                 </argument>
             </action>
         </massaction>
+
+        <!-- Paging -->
         <paging name="listing_paging"/>
     </listingToolbar>
 
+
     <!-- Bảng chứa các column -->
-    <columns name="hellomagento_product_columns">
-        <argument name="data" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="storageConfig" xsi:type="array">
-                    <item name="provider" xsi:type="string">hellomagento_product_listing.hellomagento_product_listing.listing_top.bookmarks</item>
-                    <item name="namespace" xsi:type="string">current</item>
-                </item>
-            </item>
-        </argument>
-        <selectionsColumn name="ids">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="resizeEnabled" xsi:type="boolean">false</item>
-                    <item name="resizeDefaultWidth" xsi:type="string">55</item>
-                    <item name="indexField" xsi:type="string">product_id</item>
-                    <item name="sortOrder" xsi:type="number">10</item>
-                </item>
-            </argument>
-        </selectionsColumn>
+    <!--<columns name="hellomagento_product_columns">-->
+        <!--<argument name="data" xsi:type="array">-->
+            <!--<item name="config" xsi:type="array">-->
+                <!--<item name="storageConfig" xsi:type="array">-->
+                    <!--<item name="provider" xsi:type="string">hellomagento_product_listing.hellomagento_product_listing.listing_top.bookmarks</item>-->
+                    <!--<item name="namespace" xsi:type="string">current</item>-->
+                <!--</item>-->
+            <!--</item>-->
+        <!--</argument>-->
+        <!--<selectionsColumn name="ids">-->
+            <!--<argument name="data" xsi:type="array">-->
+                <!--<item name="config" xsi:type="array">-->
+                    <!--<item name="resizeEnabled" xsi:type="boolean">false</item>-->
+                    <!--<item name="resizeDefaultWidth" xsi:type="string">55</item>-->
+                    <!--<item name="indexField" xsi:type="string">product_id</item>-->
+                    <!--<item name="sortOrder" xsi:type="number">10</item>-->
+                <!--</item>-->
+            <!--</argument>-->
+        <!--</selectionsColumn>-->
 
-        <column name="product_id">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">integer</item>
-                    <item name="sorting" xsi:type="string">asc</item>
-                    <item name="label" xsi:type="string" translate="true">ID</item>
-                    <item name="sortOrder" xsi:type="number">20</item>
-                </item>
-            </argument>
-        </column>
+        <!--<column name="product_id">-->
+            <!--<argument name="data" xsi:type="array">-->
+                <!--<item name="config" xsi:type="array">-->
+                    <!--<item name="filter" xsi:type="string">integer</item>-->
+                    <!--<item name="sorting" xsi:type="string">asc</item>-->
+                    <!--<item name="label" xsi:type="string" translate="true">ID</item>-->
+                    <!--<item name="sortOrder" xsi:type="number">20</item>-->
+                <!--</item>-->
+            <!--</argument>-->
+        <!--</column>-->
 
-        <column name="price">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">decimal</item>
-                    <item name="label" xsi:type="string" translate="true">Price</item>
-                    <item name="sortOrder" xsi:type="number">30</item>
-                </item>
-            </argument>
-        </column>
+        <!--<column name="price">-->
+            <!--<argument name="data" xsi:type="array">-->
+                <!--<item name="config" xsi:type="array">-->
+                    <!--<item name="filter" xsi:type="string">decimal</item>-->
+                    <!--<item name="label" xsi:type="string" translate="true">Price</item>-->
+                    <!--<item name="sortOrder" xsi:type="number">30</item>-->
+                <!--</item>-->
+            <!--</argument>-->
+        <!--</column>-->
 
-        <column name="status">
-            <argument name="data" xsi:type="array">
-                <item name="options" xsi:type="object">Magestore\HelloMagento\Ui\Component\Listing\Column\Status</item>
-                <item name="config" xsi:type="array">
-                    <item name="editor" xsi:type="string">select</item>
-                    <item name="filter" xsi:type="string">select</item>
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
-                    <item name="dataType" xsi:type="string">select</item>
-                    <item name="label" xsi:type="string" translate="true">Status</item>
-                    <item name="sortOrder" xsi:type="number">40</item>
-                </item>
-            </argument>
-        </column>
+        <!--<column name="status">-->
+            <!--<argument name="data" xsi:type="array">-->
+                <!--<item name="options" xsi:type="object">Magestore\HelloMagento\Ui\Component\Listing\Column\Status</item>-->
+                <!--<item name="config" xsi:type="array">-->
+                    <!--<item name="editor" xsi:type="string">select</item>-->
+                    <!--<item name="filter" xsi:type="string">select</item>-->
+                    <!--<item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>-->
+                    <!--<item name="dataType" xsi:type="string">select</item>-->
+                    <!--<item name="label" xsi:type="string" translate="true">Status</item>-->
+                    <!--<item name="sortOrder" xsi:type="number">40</item>-->
+                <!--</item>-->
+            <!--</argument>-->
+        <!--</column>-->
 
-        <actionsColumn name="actions" class="Magestore\HelloMagento\Ui\Component\Listing\Column\EditActions">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="resizeEnabled" xsi:type="boolean">false</item>
-                    <item name="resizeDefaultWidth" xsi:type="string">107</item>
-                    <item name="indexField" xsi:type="string">product_id</item>
-                    <item name="sortOrder" xsi:type="number">91</item>
-                </item>
-                <item name="idField" xsi:type="string">timeslot_id</item>
-                <item name="userUrlPathEdit" xsi:type="string">hellomagento/product/edit</item>
-            </argument>
-        </actionsColumn>
-    </columns>
+        <!--<actionsColumn name="actions" class="Magestore\HelloMagento\Ui\Component\Listing\Column\EditActions">-->
+            <!--<argument name="data" xsi:type="array">-->
+                <!--<item name="config" xsi:type="array">-->
+                    <!--<item name="resizeEnabled" xsi:type="boolean">false</item>-->
+                    <!--<item name="resizeDefaultWidth" xsi:type="string">107</item>-->
+                    <!--<item name="indexField" xsi:type="string">product_id</item>-->
+                    <!--<item name="sortOrder" xsi:type="number">91</item>-->
+                <!--</item>-->
+                <!--<item name="idField" xsi:type="string">timeslot_id</item>-->
+                <!--<item name="userUrlPathEdit" xsi:type="string">hellomagento/product/edit</item>-->
+            <!--</argument>-->
+        <!--</actionsColumn>-->
+    <!--</columns>-->
 </listing>

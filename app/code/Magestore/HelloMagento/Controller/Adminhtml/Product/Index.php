@@ -3,14 +3,16 @@ namespace Magestore\HelloMagento\Controller\Adminhtml\Product;
 
 class Index extends \Magento\Backend\App\Action
 {
-    protected $resultPageFactory = false;
+    protected $_resultPageFactory;
 
-    public function __construct(
-        \Magento\Backend\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory
-    ) {
+    protected $_resultPage;
+
+    public function __construct(\Magento\Backend\App\Action\Context $context,
+                                \Magento\Framework\View\Result\PageFactory $resultPageFactory
+    )
+    {
+        $this->_resultPageFactory = $resultPageFactory;
         parent::__construct($context);
-        $this->resultPageFactory = $resultPageFactory;
     }
 
     public function execute()
@@ -18,6 +20,9 @@ class Index extends \Magento\Backend\App\Action
         //Call page factory to render layout and page content
         $this->_setPageData();
         return $this->getResultPage();
+
+//        $resultPage = $this->_resultPageFactory->creat();
+//        return $resultPage;
     }
 
     /*
@@ -25,7 +30,7 @@ class Index extends \Magento\Backend\App\Action
      */
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('Magestore_HelloMagento::product_manage');
+        return $this->_authorization->isAllowed('Magestore_HelloMagento::hello_manage_products');
     }
 
     public function getResultPage()
@@ -39,12 +44,12 @@ class Index extends \Magento\Backend\App\Action
     protected function _setPageData()
     {
         $resultPage = $this->getResultPage();
-        $resultPage->setActiveMenu('Mageplaza_HelloMagento::product');
+//        $resultPage->setActiveMenu('Magestore_HelloMagento::hello_manage_products');
         $resultPage->getConfig()->getTitle()->prepend((__('Product')));
 
         //Add bread crumb
-        $resultPage->addBreadcrumb(__('Magestore'), __('Magestore'));
-        $resultPage->addBreadcrumb(__('Hello Magento!'), __('Manage Product'));
+//        $resultPage->addBreadcrumb(__('Magestore'), __('Magestore'));
+//        $resultPage->addBreadcrumb(__('Hello Magento!'), __('Manage Product'));
 
         return $this;
     }
