@@ -50,10 +50,14 @@
         </argument>
         <field name="product_id">
             <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Magestore\HelloMagento\Model\Source\Id</item>
                 <item name="config" xsi:type="array">
                     <item name="sortOrder" xsi:type="number">1</item>
-                    <item name="formElement" xsi:type="string">input</item>
-                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string">Product ID</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
                 </item>
             </argument>
         </field>
