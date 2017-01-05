@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
-    <columns name="sales_order_columns">
-        <column name="export_status" class="Magestore\HelloMagento\Ui\Component\Listing\Column\OrderStatus">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="visible" xsi:type="boolean">true</item>
-                    <item name="label" xsi:type="string" translate="true">XXX Demo</item>
-                </item>
-            </argument>
-        </column>
-    </columns>
-
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <container name="edit_product_list_demo">
         <fieldset name="edit_product_list_demo">
             <argument name="data" xsi:type="array">
@@ -32,4 +21,4 @@
             </insertListing>
         </fieldset>
     </container>
-</listing>
+</form>
