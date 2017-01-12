@@ -2,7 +2,8 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="head.components">
-            <block class="Magestore\HelloMagento\Block\HelloWorld" name="hellomagento" template="Magestore_HelloMagento::helloworld.phtml" group="detailed_info" />
+            <!-- Đè cái bảng lên đầu của trang xem chi tiết sản phẩm -->
+            <!--<block class="Magestore\HelloMagento\Block\HelloWorld" name="hellomagento" template="Magestore_HelloMagento::helloworld.phtml" group="detailed_info" />-->
         </referenceBlock>
     </body>
 </page>

@@ -19,8 +19,16 @@ class LogProductName
         $this->logger = $loggerInterface;
     }
 
+    /**
+     * Logs the Product Name after product name is fetched.
+     * Thực hiện sau khi lấy tên sản phẩm
+     *
+     * @param \Magento\Catalog\Model\Product $product
+     */
     public function afterGetName(\Magento\Catalog\Model\Product $product)
     {
         $this->logger->debug($product->getName());
+        echo 'This is LogProductName';
+        die();
     }
 }

@@ -15,8 +15,8 @@
         </arguments>
     </type>
     <type name="Magento\Catalog\Model\Product">
-        <plugin name="logProductName" type="\Magestore\HelloMagento\Plugin\LogProductName"/>
-        <plugin name="filterCategoryName" type="\Magestor\HelloMagento\Plugin\FilterCategoryName"/>
-        <plugin name="logDeletedProduct" type="\Magestore\HelloMagento\Plugin\LogPriceModel"/>
+        <!--<plugin name="logProductName" type="\Magestore\HelloMagento\Plugin\LogProductName"/>-->
+        <plugin name="filterCategoryName" type="\Magestore\HelloMagento\Plugin\FilterCategoryName"/>
+        <!--<plugin name="logDeletedProduct" type="\Magestore\HelloMagento\Plugin\LogPriceModel"/>-->
     </type>
 </config>

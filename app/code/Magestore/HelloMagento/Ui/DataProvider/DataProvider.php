@@ -2,11 +2,11 @@
 /**
  * Created by PhpStorm.
  * User: NamAnh
- * Date: 23-Dec-16
- * Time: 10:45 AM
+ * Date: 09-Jan-17
+ * Time: 2:29 PM
  */
 
-namespace Magestore\HelloMagento\Ui\DataProvider;
+namespace Magestore\HelloMagento\Ui\DataProvider\Product;
 
 use Magestore\HelloMagento\Ui\DataProvider\AbstractProvider;
 
