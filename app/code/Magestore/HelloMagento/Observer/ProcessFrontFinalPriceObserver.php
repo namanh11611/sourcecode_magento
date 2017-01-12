@@ -18,8 +18,8 @@ class ProcessFrontFinalPriceObserver implements ObserverInterface
         // Bắt event catalog_product_get_final_price
         // Event này chỉ được phát khi vào xem chi tiết một sản phẩm
         // Ở đây, edit_product đang là dạng model product do chúng ta tuỳ chỉnh, chỉ có id, price và status
-        echo "ProcessFrontFinalPriceObserver";
-        die;
+//        echo "ProcessFrontFinalPriceObserver";
+//        die;
 
         $id_product = $observer->getData('id');
         $price_product = $observer->getData('final_price');
