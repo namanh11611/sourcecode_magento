@@ -15,8 +15,9 @@
         </arguments>
     </type>
     <type name="Magento\Catalog\Model\Product">
+        <!-- Plugin logProductName và logDeletedProduct chạy được, nhưng filterCategoryName thì méo hiểu chạy được chưa??? -->
         <!--<plugin name="logProductName" type="\Magestore\HelloMagento\Plugin\LogProductName"/>-->
-        <plugin name="filterCategoryName" type="\Magestore\HelloMagento\Plugin\FilterCategoryName"/>
+        <!--<plugin name="filterCategoryName" type="\Magestore\HelloMagento\Plugin\FilterCategoryName"/>-->
         <!--<plugin name="logDeletedProduct" type="\Magestore\HelloMagento\Plugin\LogPriceModel"/>-->
     </type>
 </config>
